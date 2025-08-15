@@ -68,12 +68,20 @@ export default function Calendar() {
     })
     .onEnd(() => {
       if (translateX.value > 50) {
-        runOnJS(changeMonth)(-1);
+        translateX.value = withTiming(300, { duration: 200 }, () => {
+          runOnJS(changeMonth)(-1);
+          translateX.value = -300;
+          translateX.value = withTiming(0, { duration: 200 });
+        });
       } else if (translateX.value < -50) {
-        runOnJS(changeMonth)(1);
+        translateX.value = withTiming(-300, { duration: 200 }, () => {
+          runOnJS(changeMonth)(1);
+          translateX.value = 300;
+          translateX.value = withTiming(0, { duration: 200 });
+        });
+      } else {
+        translateX.value = withTiming(0, { duration: 200 });
       }
-
-      translateX.value = withTiming(0);
     });
 
   // Gesture.Simultaneous 사용으로 동시 인식 가능하게 설정
@@ -83,6 +91,8 @@ export default function Calendar() {
   const animatedStyle = useAnimatedStyle(() => ({
     height: withTiming(viewMode === 'month' ? 300 : 60),
     overflow: 'hidden',
+    backgroundColor: '#fcfcfc',
+    transform: [{ translateX: translateX.value }],
   }));
 
   return (
