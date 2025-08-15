@@ -1,4 +1,4 @@
-export { default as Home } from './Home/Home';
-export { default as Calendar } from './Calendar/Calendar';
-export { default as MyPage } from './MyPage/MyPage';
-export { default as Library } from './Library/Library';
+export { default as HomeScreen } from './Home/HomeScreen';
+export { default as CalendarScreen } from './Calendar/CalendarScreen';
+export { default as MyPageScreen } from './MyPage/MyPageScreen';
+export { default as LibraryScreen } from './Library/LibraryScreen';
