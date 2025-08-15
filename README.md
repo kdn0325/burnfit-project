@@ -4,6 +4,12 @@
 
 ```bash
 
+# 프로젝트 Clone
+git clone https://github.com/kdn0325/burnfit-project.git
+
+# 프로젝트 경로로 이동
+cd burnfit-project
+
 # yarn 환경에서 패키지 설치
 yarn install
 
