@@ -16,6 +16,9 @@ yarn install
 # iOS 환경 설정
 cd ios && pod install && cd ..
 
+**❗️iOS는 빌드 시 Xcode 프로젝트에서 Signing & Capabilities에서 Certificates를 꼭 확인해주세요!**
+
+
 # 앱 실행
 yarn start
 yarn ios      # iOS 시뮬레이터 실행
