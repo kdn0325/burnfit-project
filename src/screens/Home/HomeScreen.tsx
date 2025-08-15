@@ -1,16 +1,15 @@
 import { StyleSheet, Text } from 'react-native';
-import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const Calendar = () => {
+const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Calendar</Text>
+      <Text>Home</Text>
     </SafeAreaView>
   );
 };
 
-export default Calendar;
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {
