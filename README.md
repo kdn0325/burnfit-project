@@ -1,97 +1,68 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# [BurnFit] Front-end 개발 과제
 
-# Getting Started
+## 실행 방법
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+```bash
 
-## Step 1: Start Metro
+# yarn 환경에서 패키지 설치
+yarn install
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+# iOS 환경 설정
+cd ios && pod install && cd ..
 
-To start the Metro dev server, run the following command from the root of your React Native project:
-
-```sh
-# Using npm
-npm start
-
-# OR using Yarn
+# 앱 실행
 yarn start
+yarn ios      # iOS 시뮬레이터 실행
+yarn android  # Android 에뮬레이터 실행
 ```
 
-## Step 2: Build and run your app
+---
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+## 개발 환경
 
-### Android
+- **yarn** `1.22.22`
+- **React Native Cli** `0.81.0`
+- **Cocoapod** `1.16.2`
+- **React Native Reanimated**` 4.0.2`
 
-```sh
-# Using npm
-npm run android
+---
 
-# OR using Yarn
-yarn android
+## 📂 폴더 구조
+
+```plaintext
+src
+├── App.tsx                                            // 루트
+├── components
+│ ├── Calendar.tsx                                 // 캘린더 컴포넌트
+│ ├── CalendarGrid.tsx                          // 캘린더 셀
+│ ├── CalendarHeader.tsx                     // 캘린더 (월 표기)
+│ └── CalendarWeekdays.tsx                // 캘린더 (요일 표기)
+├── navigation
+│ └── BottomTabs.tsx                            // 바텀 탭 네비게이션
+├── screens
+│ ├── Calendar
+│ │ └── CalendarScreen.tsx                   // Calendar 스크린
+│ ├── Home
+│ │ └── HomeScreen.tsx                        // Home 스크린
+│ ├── Library
+│ │ └── LibraryScreen.tsx                      //  Library 스크린
+│ ├── MyPage
+│ │ └── MyPageScreen.tsx                    // MyPage 스크린
+│ └── index.ts
+├── types
+│ └── Calendar.ts                                    // Calendar 타입
+└── util
+└── calendarUtils.ts                                // 달력 구현 유틸 함수
 ```
 
-### iOS
+## 📸 스크린샷 / GIF
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+| <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/91298955/478434080-2e6dbaac-ffc4-4f72-9253-70f3f8662040.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250815%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250815T131402Z&X-Amz-Expires=300&X-Amz-Signature=52e0cfb33c2eef8e26cabd5961610e888c4c6ff9203bb43ed19d3203269a65a2&X-Amz-SignedHeaders=host" width="350px"> | <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/91298955/478434085-6f5607c7-5457-4354-bfc3-a7d7e00c11f2.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250815%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250815T131419Z&X-Amz-Expires=300&X-Amz-Signature=64800e304e23fddf0cdf8662dba7a6c567b13c79c4a547ae2ba6724cfb06a833&X-Amz-SignedHeaders=host" width="350px"> |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                                                                                                                                                          안드로이드                                                                                                                                                                                                          |                                                                                                                                                                                                            아이폰                                                                                                                                                                                                            |
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+---
 
-```sh
-bundle install
-```
+## 💡 구현 과제 목표
 
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- https://bunnit.notion.site/BurnFit-Front-end-20e8af48937680a798ebc5e2f3d1d1e1
